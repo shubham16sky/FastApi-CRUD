@@ -2,13 +2,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 from pymongo import MongoClient
-import json
+
 
 
 app = FastAPI()
 #mongo configuration
 #connecting to defualt host and port
-client = MongoClient()
+client = MongoClient('mongodb://db:27017/')
 #creating a database named users
 db = client['userDB']
 #creating collection
