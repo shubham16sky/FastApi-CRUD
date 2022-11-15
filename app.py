@@ -56,12 +56,12 @@ def add_user(user_data:User):
 
 
 
-@app.get("/get_users_by_acc/{accNo}")
+@app.get("/get_users_by_acc/{accNO}")
 
-def get_all_users(accNo:int):
+def get_all_users(accNO:int):
     db = client['userDB']
     collection = db['user_coll']
-    data = collection.find({"account_no":accNo})
+    data = collection.find({"account_no":accNO})
     users=[]
     
     for items in data:
