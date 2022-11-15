@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 from typing import Optional
 from pymongo import MongoClient
 
@@ -18,7 +18,7 @@ collection = db['user_coll']
 
 class User(BaseModel):
     name : str
-    account_no : int
+    account_no : int=Field(alias="_id")
     email : str
     birthdate : str
     
